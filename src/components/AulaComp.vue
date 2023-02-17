@@ -6,18 +6,20 @@
       }}
     </h1>
     <button @click="handleClick">Modificar Usuário</button>
-    <button @click="completarAula">Modificar Usuário</button>
+    <button @click="COMPLETAR_AULA">Completar Aula</button>
+    <input type="text" v-model="novoUser" />
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "AulaComp",
   data() {
     return {
       totalAula: 24,
       nome: "edmar",
+      novoUser: "",
     };
   },
   computed: {
@@ -27,13 +29,13 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(["CHANGE_USER", "COMPLETAR_AULA"]),
     handleClick() {
-      this.$store.commit('changeUser')
-    },
-    completarAula() {
-      this.$store.commit('completarAula')
-    },
-
+      this.CHANGE_USER({
+        user:this.novoUser,
+        totalAulas : this.totalAula
+      });
+    }
   },
 };
 </script>
