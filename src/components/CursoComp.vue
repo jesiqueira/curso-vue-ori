@@ -10,8 +10,7 @@ import AulaComp from './AulaComp.vue';
 export default {
   name: "CursoComp",
   data(){
-    return{
-      
+    return{      
 
     }
   },

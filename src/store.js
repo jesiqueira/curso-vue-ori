@@ -8,4 +8,12 @@ export default new Vuex.Store({
     user: "Lobo",
     aulaCompletas: 10,
   },
+  mutations: {
+    changeUser(state) {
+      state.user = "Ave";
+    },
+    completarAula(state) {
+      state.aulaCompletas++
+    },
+  },
 });

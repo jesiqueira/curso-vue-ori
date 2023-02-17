@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div id="app">
     <user-comp/>
     <curso-comp/>
